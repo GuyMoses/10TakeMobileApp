@@ -1,7 +1,7 @@
 <ion-view title='Borrows'>
 	<ion-content>
 		<ion-item-list>
-			<ion-item class="singleItem" ng-repeat='borrow in borrows.borrows'>
+			<ion-item bck-img back-img="{{borrow.item.image.url}}" class="singleItem" ng-repeat='borrow in borrows.borrows'>
 				<h1>{{borrow.item.name}}</h1>
 				<button ng-click='borrows.handleHandOff(borrow.id)' 
 								ng-if="borrow.hand_off == null">
