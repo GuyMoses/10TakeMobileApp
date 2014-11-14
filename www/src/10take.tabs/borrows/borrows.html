@@ -1,15 +1,16 @@
 <ion-view title='Borrows'>
 	<ion-content>
 		<ion-item-list>
-			<ion-item ng-repeat='borrow in borrows.borrows'>
+			<ion-item class="singleItem" ng-repeat='borrow in borrows.borrows'>
 				<h1>{{borrow.item.name}}</h1>
 				<button ng-click='borrows.handleHandOff(borrow.id)' 
 								ng-if="borrow.hand_off == null">
 					Hand Off
 				</button>
 				<div ng-if='borrow.hand_off !== null '>
-					{{borrow.hand_off.status}}
-
+					Status: {{borrow.hand_off.status}}
+					<br>
+					<br>
 					<button class="button button-balanced" ng-click='borrows.handleNextStep(borrow.hand_off.id)' 
 								ng-if="borrow.hand_off.status % 2 == 0">
 						next step
